@@ -1,0 +1,16 @@
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
+db.sqlite3
+media
+
+#Task ignore
+favicon.ico
+
+#Environment
+**/__py__/*
+
+#Python
+**/__pycache__/*

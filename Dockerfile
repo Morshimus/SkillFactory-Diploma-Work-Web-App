@@ -1,3 +1,4 @@
+LABEL version="1.0"
 FROM  python:3.9.2-alpine AS builder
 ENV PYTHONUNBUFFERED 1
 

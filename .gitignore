@@ -7,7 +7,7 @@ db.sqlite3
 media
 
 #Task ignore
-favicon.ico
+
 
 #Environment
 **/__py__/*

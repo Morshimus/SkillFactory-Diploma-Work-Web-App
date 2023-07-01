@@ -48,6 +48,7 @@ ALLOWED_HOSTS = ["*"]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django_prometheus',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -62,6 +63,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_prometheus.middleware.PrometheusBeforeMiddleware',
+    'django_prometheus.middleware.PrometheusAfterMiddleware',
 ]
 
 ROOT_URLCONF = 'SkillFactory.urls'
@@ -94,19 +97,27 @@ WSGI_APPLICATION = 'SkillFactory.wsgi.application'
 #db_host     = get_db_config("db_host")
 #db_port     = get_db_config("db_port")
 
-DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': os.environ['DJANGO_DB_NAME'],
-       'USER': os.environ['DJANGO_DB_USER'],
-       'PASSWORD': os.environ['DJANGO_DB_PASSWORD'],
-       'HOST': os.environ['DJANGO_DB_HOST'],
-       'PORT': os.environ['DJANGO_DB_PORT'],
-   }
-}
-
-
-
+if not os.environ['Test_ENV']:
+   try:  
+    DATABASES = {
+       'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.environ['DJANGO_DB_NAME'],
+            'USER': os.environ['DJANGO_DB_USER'],
+            'PASSWORD': os.environ['DJANGO_DB_PASSWORD'],
+            'HOST': os.environ['DJANGO_DB_HOST'],
+            'PORT': os.environ['DJANGO_DB_PORT'],
+        }
+    }
+   except KeyError:
+        print ('One of the os environment is empty.')
+else:
+     DATABASES = {
+        'default' : {
+           'ENGINE': 'django.db.backends.sqlite3',
+           'NAME': 'db.sqlite3'
+        }
+     } 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 

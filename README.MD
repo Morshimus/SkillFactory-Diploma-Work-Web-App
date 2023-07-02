@@ -1,6 +1,6 @@
 # Skillfactory Diploma Work Web App
 
-This is the README file for the Skillfactory Diploma Work Web App project. The app is designed to serve as the final project for the Skillfactory Python Developer course.
+This is the README file for the Skillfactory Diploma Work Web App project. The app is designed to serve as the final product of diploma project for the Skillfactory  DevOps course.
 
 ## Installation
 
@@ -21,8 +21,8 @@ cd SkillFactory-Diploma-Work-Web-App/Skillfactory
 3. Create and activate a virtual environment:
 
 ```shell
-python -m venv env;
-source env/bin/activate
+python -m venv __py____;
+source __py__/bin/activate
 ```
 
 4. Install the dependencies:

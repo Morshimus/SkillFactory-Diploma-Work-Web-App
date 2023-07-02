@@ -18,7 +18,7 @@ from configparser import NoSectionError as configparse_err
 def index(request):
     template = loader.get_template('polls/index.html')
     if not os.environ['Test_ENV']:
-        db_name = "database {0}".format( os.environ['DJANGO_DB_NAME'])
+        db_name = "pgsql {0}".format( os.environ['DJANGO_DB_NAME'])
     else:
         db_name = "test_db"
     context = {

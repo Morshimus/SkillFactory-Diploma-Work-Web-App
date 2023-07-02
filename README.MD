@@ -33,13 +33,13 @@ pip install -r requirements.txt
 
 5. Set up the PostgreSQL database:
    - Create a new PostgreSQL database instance.
-   - Update the `DATABASES` configuration in the `config/settings.py` file to point to your PostgreSQL instance.
+   - Mentioned credentials in env for container\helm
 
-6. Set the `TEST_ENV` environment variable:
-   - In your command prompt, run the following command to set the `TEST_ENV` environment variable to `True`:
+6. Set the `Test_ENV` environment variable:
+   - In your command prompt, run the following command to set the `Test_ENV` environment variable to `True`:
 
 ```shell
-export TEST_ENV=True
+export Test_ENV=True
 ```
 
 7. Apply the database migrations:

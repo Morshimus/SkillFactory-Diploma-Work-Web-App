@@ -21,7 +21,7 @@ cd SkillFactory-Diploma-Work-Web-App/Skillfactory
 3. Create and activate a virtual environment:
 
 ```shell
-python -m venv __py____;
+python -m venv __py__;
 source __py__/bin/activate
 ```
 
